@@ -47,6 +47,7 @@ public class MyController {
         Student exisitngStudent = studentRepository.findById(id).get();
         exisitngStudent.setName(student.getName());
         exisitngStudent.setAddress(student.getAddress());
+        studentRepository.save(exisitngStudent);
         return "Record is updated";
     }
     
