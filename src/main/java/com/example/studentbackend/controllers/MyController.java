@@ -49,4 +49,9 @@ public class MyController {
         exisitngStudent.setAddress(student.getAddress());
         return "Record is updated";
     }
+    
+     @GetMapping("/student/{id}")
+    public Student getStudent(@PathVariable Integer id){
+        return  studentRepository.findById(id).get();
+    }
 }
