@@ -31,5 +31,14 @@ public class MyController {
         }
     }
 
-
+    @DeleteMapping("/student/{id}")
+    public String deleteStudent(@PathVariable Integer id) {
+        boolean studentExists = studentRepository.existsById(id);
+        if (studentExists) {
+            studentRepository.deleteById(id);
+            return "Record deleted successfully";
+        } else {
+            return "Record does not exist";
+        }
+    }
 }
