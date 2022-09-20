@@ -17,7 +17,7 @@ public class MyController {
 
     @GetMapping("/students")
     public List<Student> getListOfStudents() {
-        return studentRepository.find();
+        return studentRepository.findAll();
     }
 
     @PostMapping("/student")
