@@ -27,7 +27,7 @@ public class MyController {
             studentRepository.save(student);
             return " Record Saved Successfully";
         } else {
-            "Student already exists!!!";
+           return "Student already exists!!!";
         }
     }
 
