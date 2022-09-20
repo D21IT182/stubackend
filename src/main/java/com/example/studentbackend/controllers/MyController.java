@@ -41,4 +41,12 @@ public class MyController {
             return "Record does not exist";
         }
     }
+    
+    @PutMapping("/student/{id}")
+    public String updateStudent(@RequestBody Student student, @PathVariable Integer id){
+        Student exisitngStudent = studentRepository.findById(id).get();
+        exisitngStudent.setName(student.getName());
+        exisitngStudent.setAddress(student.getAddress());
+        return "Record is updated";
+    }
 }
